@@ -11,7 +11,7 @@ from dotenv import load_dotenv, dotenv_values
 load_dotenv()
 
 #//*---Database Connectivity--------*//
-# sql_db_url = "postgresql://postgres:4658@localhost:5432/FWP"
+# sql_db_url = f"postgresql://postgres:4658@localhost:5432/FWP"
 
 
 # engine = create_engine(sql_db_url)
@@ -32,7 +32,7 @@ def generate_uuid():
 
 #//*---Model form api log---*//
 class fwp_task_log(Base):
-    __tablename__ = 'task_log'
+    __tablename__ = 'fwp_task_log'
     id = Column(Integer,primary_key=True,index= True)
     fc_uuid = Column(String)
     user_uuid = Column(String)
@@ -46,7 +46,7 @@ class fwp_task_log(Base):
     webhook_status = Column(String)
     
 class create_fwp_log(Base):
-    __tablename__ = 'api_log'
+    __tablename__ = 'fwp_api_log'
     id = Column(Integer,primary_key=True,index= True)
     fc_uuid = Column(String)
     status = Column(String)

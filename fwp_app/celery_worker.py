@@ -84,7 +84,7 @@ def webhook_update(task_id,status,traceback='None'):
     r = requests.post(webhook_url,json=req,headers={"Content-Type": "application/json"})
     try:
         db = models.sessionlocal()
-        record = db.query(models.task_log).filter_by(task_id=task_id).first()
+        record = db.query(models.fwp_task_log).filter_by(task_id=task_id).first()
         if record:
             record.webhook_status = 'done'
             db.commit()
