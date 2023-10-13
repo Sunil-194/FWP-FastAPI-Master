@@ -83,7 +83,7 @@ async def Create_FWP(api_fc_uuid:str,json_file:UploadFile = File(...),db:Session
 
 def task_log(db, taskid,api_fc_uuid,user_uuid_client,user_name,state,status):
     ts = str(dt.now())
-    task_log = models.task_log(fc_uuid=api_fc_uuid,user_uuid=user_uuid_client,name=user_name,task_id = taskid,created_time=ts,updated_time=ts,state = state,status=status)
+    task_log = models.fwp_task_log(fc_uuid=api_fc_uuid,user_uuid=user_uuid_client,name=user_name,task_id = taskid,created_time=ts,updated_time=ts,state = state,status=status)
     db.add(task_log)
     db.commit()
     db.refresh(task_log)

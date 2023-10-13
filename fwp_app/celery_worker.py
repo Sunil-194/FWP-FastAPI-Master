@@ -56,7 +56,7 @@ def update_record_in_db(task_id,state,status,traceback='None'):
     db = models.sessionlocal()
     
     try:
-        record = db.query(models.task_log).filter_by(task_id=task_id).first()
+        record = db.query(models.fwp_task_log).filter_by(task_id=task_id).first()
         if record:
             ts = str(dt.now())
             record.status = status

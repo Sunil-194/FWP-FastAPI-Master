@@ -31,7 +31,7 @@ def generate_uuid():
     return str(uuid.uuid4())
 
 #//*---Model form api log---*//
-class task_log(Base):
+class fwp_task_log(Base):
     __tablename__ = 'task_log'
     id = Column(Integer,primary_key=True,index= True)
     fc_uuid = Column(String)
